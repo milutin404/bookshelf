@@ -3,14 +3,14 @@ function Search() {
     let searchOnTimeout;
     const timerForSearch = 700;
 
-    /**
-     * Sends search value to server, after timeout.
-     * @param {event} event 
-     */
     function doTheSearch(event) {
         clearTimeout(searchOnTimeout);
         searchOnTimeout = setTimeout(() => {
-            console.log(event.target.value);
+            fetch('http://openlibrary.org/search.json?q=' + event.target.value)
+                .then(value => value.json())
+                .then(response => {
+                    console.table(response);
+                }
         }, timerForSearch);
     }
 
