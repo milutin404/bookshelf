@@ -1,0 +1,9 @@
+.bookCover {
+    width: 250px;
+    height: 400px;
+    background-color: aqua;
+}
+
+h1 {
+    padding-top: 40%;
+}
