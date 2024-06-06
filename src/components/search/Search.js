@@ -10,7 +10,7 @@ function Search() {
                 .then(value => value.json())
                 .then(response => {
                     console.table(response);
-                });
+                }
         }, timerForSearch);
     }
 
