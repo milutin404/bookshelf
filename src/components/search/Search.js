@@ -1,4 +1,4 @@
-function Search() {
+function Search(props) {
 
     let searchOnTimeout;
     const timerForSearch = 700;
@@ -9,8 +9,8 @@ function Search() {
             fetch('http://openlibrary.org/search.json?q=' + event.target.value)
                 .then(value => value.json())
                 .then(response => {
-                    console.table(response);
-                })
+                    props.sendBooks(response);
+                });
         }, timerForSearch);
     }
 
