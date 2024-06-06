@@ -1,9 +1,17 @@
 function Search() {
 
-    function doTheSearch(event) {
-        
-        console.log(event.target.value);
+    let searchOnTimeout;
+    const timerForSearch = 700;
 
+    /**
+     * Sends search value to server, after timeout.
+     * @param {event} event 
+     */
+    function doTheSearch(event) {
+        clearTimeout(searchOnTimeout);
+        searchOnTimeout = setTimeout(() => {
+            console.log(event.target.value);
+        }, timerForSearch);
     }
 
     return (
