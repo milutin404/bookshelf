@@ -1,3 +1,5 @@
+import './style.css'
+
 function Search(props) {
 
     let searchOnTimeout;
@@ -16,7 +18,7 @@ function Search(props) {
 
     return (
         <div>
-            <input onChange={doTheSearch} type="text"></input>
+            <input className="searchFiled" onChange={doTheSearch} type="text"></input>
         </div>
     );
 }
