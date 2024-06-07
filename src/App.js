@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Search sendBooks={renderBooks} />
-      <div>
+      <div className='bookShelf'>
         {[...books].map(book => book.title ? <Card bookData={book} /> : null)}
       </div>
     </div>
